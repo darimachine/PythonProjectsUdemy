@@ -1,0 +1,59 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table">
+          <thead>
+            <tr>
+              {% for title in cafes[0] %}
+                <th scope="col">{{ title}}</th>
+              {% endfor %}
+
+            </tr>
+          </thead>
+          <tbody>
+          {% for data in cafes[1:] %}
+            <tr>
+
+                <th scope="row">{{ data[0] }}</th>
+                <td><a href="{{ data[1] }}" target="_blank">Maps Link</a></td>
+                <td>{{ data[2] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ data[4] }}</td>
+                <td>{{ data[5] }}</td>
+                <td>{{ data[6] }}</td>
+
+            </tr>
+          {% endfor %}
+<!--            <tr>-->
+<!--              <th scope="row">2</th>-->
+<!--              <td>Jacob</td>-->
+<!--              <td>Thornton</td>-->
+<!--              <td>@fat</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--              <th scope="row">3</th>-->
+<!--              <td colspan="2">Larry the Bird</td>-->
+<!--              <td>@twitter</td>-->
+<!--            </tr>-->
+          </tbody>
+      </table>
+
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
