@@ -1,0 +1,1 @@
+http://jsonviewer.stack.hu/#http://https://api.openweathermap.org/data/2.5/onecall?lat=41.683560&lon=24.292580&appid=f5e624636ba4bfc5461db6b76ceaeb47
